@@ -154,14 +154,14 @@ fun WeatherDetails(data: WeatherModel) {
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     WeatherKeyValue("Humidity",data.current.humidity)
-                    WeatherKeyValue("Wind Speed",data.current.wind_kph)
+                    WeatherKeyValue("Wind Speed",data.current.wind_kph+" km/h")
                 }
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     WeatherKeyValue("UV",data.current.uv)
-                    WeatherKeyValue("Participation",data.current.precip_mm)
+                    WeatherKeyValue("Participation",data.current.precip_mm+ " mm")
                 }
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -182,7 +182,7 @@ fun WeatherKeyValue(key: String, value: String) {
         modifier = Modifier.padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = value, fontSize = 16.sp, fontWeight = FontWeight.Bold)
+        Text(text = value, fontSize = 20.sp, fontWeight = FontWeight.Bold)
         Text(text = key, fontWeight = FontWeight.SemiBold, color = Color.Gray)
     }
 }
